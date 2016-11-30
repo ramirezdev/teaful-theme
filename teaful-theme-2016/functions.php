@@ -64,6 +64,12 @@ function bones_ahoy() {
 add_action( 'after_setup_theme', 'bones_ahoy' );
 
 
+add_action( 'init', 'jk_remove_wc_breadcrumbs' );
+function jk_remove_wc_breadcrumbs() {
+    remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+}
+
+
 /************* OEMBED SIZE OPTIONS *************/
 
 if ( ! isset( $content_width ) ) {

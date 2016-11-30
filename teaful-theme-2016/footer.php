@@ -2,6 +2,13 @@
 
 				<div id="inner-footer" class="wrap cf">
 
+					<div class="social-wrapper">
+						<span>follow us on</span> 
+						<a href="#" class="social-icon twitter"></a>
+						<a href="#" class="social-icon pin"></a>
+						<a href="#" class="social-icon fb"></a>
+					</div>
+
 					<nav role="navigation">
 						<?php wp_nav_menu(array(
     					'container' => 'div',                           // enter '' to remove nav container (just make sure .footer-links in _base.scss isn't wrapping)
@@ -11,14 +18,16 @@
     					'theme_location' => 'footer-links',             // where it's located in the theme
     					'before' => '',                                 // before the menu
     					'after' => '',                                  // after the menu
-    					'link_before' => '',                            // before each link
-    					'link_after' => '',                             // after each link
+    					'link_before' => ' ',                            // before each link
+    					'link_after' => ' / ',                             // after each link
     					'depth' => 0,                                   // limit the depth of the nav
     					'fallback_cb' => 'bones_footer_links_fallback'  // fallback function
 						)); ?>
 					</nav>
 
-					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
+					<div class="copyright-wrapper">
+						<span>&copy; Copyright teaful</span> <a href="#" class="terms">PRIVACY</a> <a href="#" class="terms">TERMS</a> 
+					</div>
 
 				</div>
 

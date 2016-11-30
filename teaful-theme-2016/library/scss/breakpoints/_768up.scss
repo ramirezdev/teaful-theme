@@ -23,9 +23,9 @@ body {}
 LAYOUT & GRID STYLES
 *********************/
 
-.wrap {
+/* .wrap {
 	width: 760px;
-}
+} */
 
 /*********************
 HEADER STYLES
@@ -42,7 +42,7 @@ NAVIGATION STYLES
 .nav {
 	border: 0;
 	ul {
-		background:$black;
+		background:$white;
 		margin-top:0;
 	}
 	li {
@@ -51,14 +51,13 @@ NAVIGATION STYLES
 
 		a {
 			border-bottom: 0;
-
+			color: $black;
 			/*
 			you can use hover styles here even though this size
 			has the possibility of being a mobile device.
 			*/
 			&:hover, &:focus {
-				color: $white;
-				text-decoration: underline;
+				color: $teaful-blue;
 			}
 		}
 
@@ -71,23 +70,29 @@ NAVIGATION STYLES
 		ul.sub-menu,
 		ul.children {
 			margin-top: 0;
-			border: 1px solid #ccc;
 			border-top: 0;
 			position: absolute;
 			visibility: hidden;
 			z-index: 8999;
+			    width: 190px;
+			/*     left: 30px; */
 
 			li {
 
+			    width: 100%;
+    			text-align: center;
+
 				a {
-					padding-left: 10px;
 					border-right: 0;
 					display: block;
-					width: 180px;
+				    padding: 10px 0;
+    				font-size: 10px;
 					border-bottom: 1px solid #ccc;
 
 					&:hover,
-					&:focus {}
+					&:focus {
+						color: $teaful-blue;
+					}
 
 					&:link {}
 				}
@@ -116,7 +121,7 @@ NAVIGATION STYLES
 			li.current-menu-item,
 			li.current_page_item,
 			li.current_page_ancestor {
-				a {}
+				a { color: $teaful-blue !important; }
 			}
 		}
 

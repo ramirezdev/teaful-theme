@@ -116,5 +116,10 @@ jQuery(document).ready(function($) {
   */
   loadGravatars();
 
+  $('#mc_mv_EMAIL').attr('placeholder', 'Enter your email');
+  $('#menu-item-67 > a').on('click', function (e) {
+    e.preventDefault();
+  });
+
 
 }); /* end of as page load scripts */

@@ -16,11 +16,11 @@ GENERAL STYLES
 *********************/
 
 body {
-	font-family: $lato;
+	font-family: $montserrat;
 	font-size: 100%;
 	line-height: 1.5;
-	color: $text-color;
-	background-color: $gray;
+	color: $black;
+	background-color: $white;
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
 }
@@ -71,7 +71,7 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	width: 96%;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -153,16 +153,105 @@ HEADER STYLES
 *********************/
 
 .header {
-	background-color: $black;
-}
-
-	#logo {
-		margin: 0.75em 0;
-
-		a {
+	background-color: $header-light-gray;
+	width: 100%;
+	.utility-bar-wrapper {
+		width: 100%;
+		background-color: $header-gray;
+		.utility-bar {
+			font-size: 13px;
+			padding: 10px;
+			background-color: $header-gray;
 			color: $white;
+		    position: relative;
+		    .header-message {
+		    	display: inline-block;
+		    	a {
+		    		color: $white;
+		    		text-decoration: underline; 
+		    	}
+		    }
+			.cart {
+				display: inline-block;
+			    position: absolute;
+			    right: 20px;
+			    a {
+			    	color: $white;
+			    	text-decoration: none;
+			    	position: relative;
+				    top: -3px;
+				    font-size: 14px;
+			    }
+			    .cart-icon {
+			    	width: 18px;
+				    display: inline-block;
+				    position: relative;
+				    right: 10px;
+    				top: 1px;
+				    svg {
+				    	fill: currentColor;
+				    }
+			    }
+			}
+
+			.meta-wrapper {
+				display: inline-block;
+			    position: absolute;
+			    right: 75px;
+		        border-right: 1px solid #fff;
+				padding-right: 17px;
+				.or {
+					position: relative;
+    				top: -4px;
+				}
+				.profile-icon {
+				    width: 18px;
+    				position: relative;
+    				display: inline-block;
+    				    left: -5px;
+    				svg {
+				    	fill: currentColor;
+				    }
+				}
+				a{
+					color: $white;
+					text-decoration:none;
+				    position: relative;
+    				top: -4px;
+				}
+			}
 		}
 	}
+	#inner-header{
+		position: relative;
+		padding:20px;
+		nav{
+			width: 580px;
+		    position: absolute;
+		    right: 150px;
+		    top: 50%;
+		    margin-top: -10px;
+		}
+		.header-subscribe-bttn {
+			font-size: 14px;
+		    padding: 15px;
+		    display: inline-block;
+		    text-decoration: none;
+		    color: $teaful-blue;
+		    border: 1px solid $teaful-blue;
+		    position: absolute;
+		    right: 40px;
+		    top: 50%;
+		    margin-top: -29px;
+		    &:hover{
+		    	color: $white;
+		    	background-color: $teaful-blue;
+		    }
+		}
+	}
+}
+
+	
 
 /*********************
 NAVIGATION STYLES
@@ -184,9 +273,12 @@ and more scalable.
 
 		a {
 			display: block;
-			color: $white;
+			color: $black;
+			font-size: 13px;
 			text-decoration: none;
-			padding: 0.75em;
+			text-transform: uppercase;
+			padding: 0 1.5em;
+			    letter-spacing: 2px;
 
 			/*
 			remember this is for mobile ONLY, so there's no need
@@ -201,7 +293,7 @@ and more scalable.
 
 		&:first-child {}
 
-		&:last-child {}
+		&:last-child {padding-right:0px;}
 
 		/*
 		so you really have to rethink your dropdowns for mobile.
@@ -252,23 +344,23 @@ POSTS & CONTENT STYLES
 *********************/
 
 #content {
-	margin-top: 1.5em;
+
 }
 
 		.hentry {
 			background-color: $white;
-			border-radius: 3px;
-			margin-bottom: 1.5em;
-			border: 1px solid $border-color;
 
-			header {
-				border-bottom: 1px solid $light-gray;
-				padding: 1.5em;
+			.region-about-copy {
+				font-size:12px;
+				font-family: $montserrat;
+				line-height: 20px;
+				padding: 20px 50px;
+				color: #696969;
 			}
 
+
 			footer {
-				padding: 1.5em;
-				border-top: 1px solid $light-gray;
+				
 
 				p {
 					margin: 0;
@@ -312,10 +404,89 @@ POSTS & CONTENT STYLES
 
 		/* entry content */
 		.entry-content {
-			padding: 1.5em 1.5em 0;
+
+			.body-copy {
+				padding: 0 100px;
+				font-size: 13px;
+				letter-spacing: 1px;
+				    line-height: 30px;
+			}
+
+			.article-footer {
+				text-align: center;
+			    margin-bottom: 40px;
+				.cta {
+					font-size: 14px;
+				    position: relative;
+				    top: -11px;
+				    left: -15px;
+				}
+			}
+			
+			
 
 			p {
-				margin: 0 0 1.5em;
+				margin: 0;
+			}
+
+			.copy-section {
+				h1, h2, h3, h4{ margin:0; padding:0; }
+				padding: 115px 0 200px 20%;
+				.section-title-flip {
+				    color: #a6cedb;
+				    opacity: .5;
+				    font-size: 85px;
+    				letter-spacing: 35px;
+				    line-height: 100px;
+				    position: absolute;
+				    left: -263px;
+    				top: 320px;
+				    -ms-transform: rotate(-90deg);
+				    -webkit-transform: rotate(-90deg);
+				    transform: rotate(-90deg);
+				    font-family: $oswald;
+				}
+				.desc {
+					h4{
+						font-size: 22px;
+						line-height: 22px;
+					    margin-bottom: 10px;
+					}
+					h3 {
+						font-size: 72px;
+						line-height: 72px;
+						font-family: $oswald;
+					    letter-spacing: 8px;
+					}
+					.separator {
+						margin-top: 25px;
+						background-color: $teaful-blue;
+						width: 75px;
+						height: 5px;
+						opacity: .5;
+					}
+
+					.section-desc {
+						margin: 50px 0;
+						font-size: 14px;
+						color: #696969;
+						p{
+							&:first-child {
+								padding-bottom: 25px;
+							}
+						}
+					}
+
+					.section-bttn {
+						font-size: 14px;
+						color: $teaful-blue;
+						border: 1px solid $teaful-blue;
+						display: inline-block;
+						padding: 20px 75px;
+						text-decoration: none;
+					}
+
+				}
 			}
 
 
@@ -437,6 +608,8 @@ POSTS & CONTENT STYLES
 			}
 
 		} /* end .entry-content */
+
+
 
 		.wp-caption {
 			max-width: 100%;
@@ -862,28 +1035,692 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	background-color: $black;
-	color: $light-gray;
+	background-color: $header-gray;
+	color: $white;
+
+	#inner-footer{
+		    padding: 35px 10px;
+		.social-wrapper {
+			text-align: center;
+			    margin-bottom: 20px;
+		}
+		.footer-links {
+
+			ul {
+		    	width: 495px;
+    			margin: 0 auto;
+
+				li {
+					a {
+						color: $white;
+						font-size: 14px;
+						margin: 0;
+						padding: 0;
+					}
+				}
+
+			}
+
+		} /* end .footer-links */
+
+		.copyright-wrapper {
+			font-size: 12px;
+		    color: $white;
+		    margin-top: 25px;
+		    text-transform: uppercase;
+		    a {
+				color: $white;
+				text-decoration:none;
+		    }
+		    .terms {
+	    	    margin-left: 35px;
+		    }
+		}
+	}
 }
 
-	/*
-	if you checked out the link above:
-	http://www.alistapart.com/articles/organizing-mobile/
-	you'll want to style the footer nav
-	a bit more in-depth. Remember to keep
-	it simple because you'll have to
-	override these styles for the desktop
-	view.
-	*/
-	.footer-links {
 
-		ul {
-
-			li {}
-
-		}
-
-	} /* end .footer-links */
+	
 
 
 	.copyright {}
+
+	.tparrows {
+		&:before {
+			    color: #696969;
+		}
+
+	}
+
+	#taste-by-region {
+
+		overflow: visible;
+		.teapot {
+			margin-top: -70px;
+		}
+	
+	}
+
+	.flip-location {
+		-ms-transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+	}
+
+	.mailing-list-cta {
+		letter-spacing: 3px;
+		margin: 0;
+	}
+
+	.region-header-separator {
+		width: 83px;
+		height: 3px;
+		background:$white;
+	}
+
+	.regions-buttons-wrapper {
+		a {
+			width: 289px;
+			padding:20px 0;
+			color: $white;
+			display: inline-block;
+			font-family: $montserrat;
+			text-align: center !important;
+			border: 2px solid $white;
+			text-decoration:none;
+			margin: 0 10px !important;
+			&:hover {
+				background: $white;
+				color: #696969;
+			}
+		}
+	}
+
+	#down-arrow {
+		fill:$white;
+		height: 32px;
+	}
+
+	#customer_login {
+		max-width: 1295px;
+		margin: 85px 0;
+		overflow: auto;
+
+		.col-1, .col-2 {
+			width: 50%;
+		}
+
+		.col-1 {
+			border-right: 1px solid #696969;
+		}
+
+		.form-wrapper {
+			padding: 0 100px;
+			h2 {
+				margin: 0 0 45px 0;
+				padding: 0;
+				text-align: center;
+				font-size: 31px;
+				letter-spacing: 3px;
+				font-family: $oswald;
+				color: #696969;
+			}
+			form{
+				margin: 0;
+				padding: 0;
+				border:none;
+				border-radius: 0;
+				p {
+					margin: 0;
+					padding: 0;
+				}
+				input.input-text {
+					max-width: 100%;
+					background: $white;
+					border:2px solid $teaful-blue;
+					color: $teaful-blue;
+					margin-bottom: 15px;
+					border-radius: 0;
+					&:placeholder {
+						color: #696969;
+					}
+				}
+				.woocommerce-Button.button {
+					width: 100%;
+					border-radius: 0;
+					color: $white;
+					font-size: 12px;
+					padding: 15px 0;
+					background: $teaful-blue;
+					font-family: $montserrat;
+				}
+				.rememberme {
+					text-align: center;
+					margin: 0 auto;
+					display: block;
+					font-size: 12px;
+					padding: 15px 0px;
+				}
+				.woocommerce-LostPassword.lost_password {
+					a {
+						color: $black;
+						text-decoration: none;
+						text-align: center;
+						display: inherit;
+						font-size: 12px;
+						margin-bottom: 15px;
+					}
+				}
+				.oneall_social_login {
+					margin: 15px 0;
+					.oneall_social_login_label {
+						text-align: center;
+						font-size: 12px;
+					}
+					.oneall_social_login_providers {
+						width: 87px;
+						overflow: hidden;
+						height: 18px;
+						margin: 15px auto;
+					}
+				}
+			}
+		}
+
+		.list-wrapper {
+			clear: both;
+			padding-top:100px;
+		}
+
+	}
+
+	#founder-row {
+
+		.meet-founder-heading {
+			letter-spacing: 3px;
+		}
+		.meet-founder-desc {
+			font-size: 14px;
+    		padding: 10px 100px;
+		}
+		.bio-pic {
+			width: 208px;
+		    height: 208px;
+		    border-radius: 100%;
+		    overflow: hidden;
+		    margin: 0 auto;
+		    background: $white;
+		    img {
+	    	    padding-top: 12px;
+		    }
+		}
+		.name-wrapper {
+			h3 {
+				font-size: 18px;
+				text-align: center;
+			}
+			.bio {
+			    font-size: 14px;
+			    width: 290px;
+			    text-align: center;
+			    margin: 0 auto;
+			}
+		}
+	}
+
+.all-posts-wrapper {
+	margin-top:50px;
+	padding: 0 80px 80px;
+	    overflow: auto;
+
+	.post {
+		&.featured {
+			overflow: auto;
+		    margin-bottom: 80px;
+			.image-wrapper {
+	    		max-width: 748px;
+    			width: 70%;
+    			position: relative;
+			    display: inline-block;
+				float: left;
+    			.wp-post-image {
+    				width: 100%;
+    				height: auto;
+    			}
+    			.post-meta {
+    				position: absolute;
+    				bottom: 8px;
+    				width: 100%;
+    				padding: 30px;
+    				h2{
+					    margin: 0;
+					    padding: 0;
+					    color: $white;
+					    position: relative;
+					    z-index: 1;
+					    line-height: 1;
+					    font-family: $oswald;
+					    font-size: 33px;
+					    letter-spacing: 2px;
+					    text-transform: uppercase;
+    				}
+    				.date {
+    					color: $white;
+					    position: relative;
+					    z-index: 1;
+					    letter-spacing: 1px;
+					    text-transform: uppercase;
+					    font-size: 16px;
+    				}
+    				.grad {
+    					opacity: .4;
+    					position: absolute;
+					    top: 0;
+				        left: 0;
+					    width: 100%;
+					    height: 100%;
+						background: #484442; /* Old browsers */
+						background: -moz-linear-gradient(left,  #484442 0%, #696969 100%); /* FF3.6-15 */
+						background: -webkit-linear-gradient(left,  #484442 0%,#696969 100%); /* Chrome10-25,Safari5.1-6 */
+						background: linear-gradient(to right,  #484442 0%,#696969 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+						filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#484442', endColorstr='#696969',GradientType=1 ); /* IE6-9 */
+    				}
+    			}
+			}
+
+			.blurb-wrapper {
+				display: inline-block;
+				float: left;
+				width: 30%;
+				padding: 80px 50px 0;
+				p {
+					margin:0;
+					padding:0;
+				    font-size: 14px;
+				    color: #696969;
+			        line-height: 25px;
+		            margin-bottom: 40px;
+	                letter-spacing: 1px;
+				}
+				a {
+					color: $white;
+					font-size: 14px;
+					background: $teaful-blue;
+					text-align: center;
+    				padding: 15px;
+    				display: block;
+					text-decoration: none;
+					border: none;
+					&:hover {
+						background: $white;
+						color: $teaful-blue;
+						border: 1px solid $teaful-blue;
+					}
+				}
+			}
+
+		}
+
+		&.not-featured {
+			width: 33%;
+			padding: 10px;
+			display: inline-block;
+			margin-bottom: 50px;
+			.image-wrapper {
+				    margin-bottom: 25px;
+				.wp-post-image {
+    				width: 100%;
+    				height: auto;
+    			}
+			}
+			.post-meta {
+			    padding: 0 20px;
+				h2 {
+					font-size: 18px;
+					margin: 0 0 10px 0;
+				    padding: 0;
+				    line-height: 1;
+				    font-weight: bold;
+				    color: $black;
+				    text-transform: uppercase;
+				}
+				.date {
+					font-size: 14px;
+					color: #696969;
+				}
+			}
+			.blurb-wrapper {
+				padding: 0 20px;
+			    margin-top: 15px;
+				p {
+					margin:0;
+					padding:0;
+				    font-size: 14px;
+				    color: #696969;
+			        line-height: 30px;
+		            margin-bottom: 20px;
+				}
+				a {
+				    font-size: 14px;
+				    color: $teaful-blue;
+				    text-decoration: none;
+				}
+			}
+		}
+	}
+
+	
+}
+
+.coments-title, .commentcount {
+	display:none;
+}
+
+.fb-comments {
+	iframe {
+		padding: 0 100px;
+	}
+}
+
+
+
+#mailchimpsf_widget-3 {
+	.widgettitle {
+		display: none;
+	}
+	#mc_signup {
+		.mc_form_inside {
+		    padding: 0 50px;
+		        overflow: auto;
+			#mc_message {
+				    text-align: center;
+				.mc_success_msg {
+					color: $teaful-blue;
+				}
+			}
+			.mc_merge_var {
+			    margin: 0;
+		        width: 70%;
+			    float: left;
+			    margin-right: 3%;
+				label {
+					display: none;
+				}
+				#mc_mv_EMAIL {
+				    border: 1px solid #77855e;
+					border-radius: 0;
+					background: transparent;
+				    margin: 0;
+				    max-width: 100%;
+					color: #76855e;
+				}
+			}
+			.mc_signup_submit {
+			    text-align: center;
+			    width: 27%;
+			    float: left;
+				#mc_signup_submit {
+				    margin: 0;
+				    width: 100%;
+				    background: $teaful-blue;
+				    border: none;
+				    font-size: 14px;
+				    color: $white;
+				    padding: 11px 0;
+				}
+
+			}
+			#mc_display_rewards {
+				display: none;
+			}
+		}
+	}
+}
+
+
+article.product {
+	.profile-desc-row {
+		padding: 0 70px;
+
+		.product-title {
+			margin:0;
+			padding:0;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+		}
+		.product-location {
+			font-size: 18px;
+			font-family: $montserrat;
+			color: #696969;
+			margin-top: 10px;
+			text-transform: uppercase;
+			margin-bottom: 0;
+		}
+		.product-desc-1, .product-desc-2 {
+			font-size: 14px;
+			line-height: 30px;
+			color: #696969;
+		}
+		.product-desc-2 {
+			color: $teaful-blue;
+		}
+
+		.location-wrapper {
+			    margin-bottom: 0;
+			    color: #696969;
+			    text-transform: uppercase;
+			.map {
+			    width: 30px;
+			    display: inline-block;
+			    position: relative;
+			    top: 10px;
+			    svg {
+			    	fill: #696969;
+			    }
+			}
+		}
+
+
+		.region-title {
+			margin:0;
+			padding:0;
+			margin-bottom: 20px;
+			a {
+				&:hover {
+					color: $teaful-blue;
+				}
+			}
+		}
+
+		.region-desc {
+			font-size: 14px;
+			line-height: 30px;
+			color: #696969;
+			padding-right:20px;
+			a {
+				color: $teaful-blue;
+				text-decoration: none;
+				&:hover {
+					color: #696969;
+				}
+			}
+		}
+
+	}
+
+	.elevation {
+		color: $teaful-blue;
+		text-align: center;
+		h3 {
+			font-family: $oswald;
+			font-size: 50px;
+			margin: 0;
+		    padding: 0;
+		    line-height: 50px;
+		}
+		span {
+			display: block;
+		}
+		.units {
+			margin-top: 8px;
+			font-family: $oswald;
+			font-size: 16px;
+		}
+		.label {
+			 margin-top: 30px;
+			font-family: $montserrat;
+			font-size: 12px;
+		}
+	}
+	.large-map{
+	    width: 104px;
+		margin: 0 auto;
+		svg {
+			fill:#e1e3e4;
+		}
+	}
+	.map-origin-label, .harvest-label {
+		font-size: 13px;
+		text-align: center;
+		letter-spacing: 1px;
+		width: 100%;
+		color: #e1e3e4;
+	}
+	.harvest-icon {
+		width: 104px;
+		margin: 0 auto;
+		svg {
+			fill:#e1e3e4;
+		}
+	}
+}
+
+
+
+#logo {
+	width:164px;
+}
+
+.buy-bar {
+	background: $teaful-blue;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 111111;
+    width: 100%;
+    height: 80px;
+
+    .cta {
+    	color: $white;
+			font-size: 21px;
+		    position: relative;
+		    top: 25px;
+		    left: 20px;
+		    letter-spacing: 1px;
+    }
+
+    .buy-this {
+    	position: absolute;
+    	right: 20px;
+    	.price {
+    		font-size: 18px;
+    		color: $white;
+    		margin-right: 25px;
+    	}
+    	a {
+    		font-size: 14px;
+		    text-decoration: none;
+		    border: 2px solid $white;
+		    padding: 10px 35px;
+		    color: $white;
+    	}
+    }
+
+	&.a-la-carte {
+		.prod-title {
+			color: $white;
+			font-size: 22px;
+		    position: relative;
+		    top: 25px;
+		    left: 20px;
+		}
+		.quanity-price {
+		    position: relative;
+		    left: 50px;
+		    top: 25px;
+		    font-size: 16px;
+		    color: $white;
+		}
+		.qty-label {
+			position: absolute;
+		    right: 215px;
+		    top: 32px;
+		    color: $white;
+		}
+		h1.product_title {
+			display: none;
+		}
+		div[itemprop="offers"] { 
+    		display: none;
+		}
+		.cart {
+		    display: inline-flex;
+    		position: absolute;
+    		right: 20px;
+    		.quantity {
+    			display: inline-block;
+    			.input-text {
+    				&.qty {
+    					background: none;
+					    color: $white;
+					    position: relative;
+					    top: 22px;
+    				}
+    			}
+    		}
+    		.single_add_to_cart_button {
+			    background: none;
+			    border: 2px solid $white;
+			    font-size: 14px;
+			    padding: 0 20px;
+			    height: 40px;
+			    border-radius: 0;
+			    position: relative;
+			    top: 22px;
+    		}
+		}
+		.product_meta {
+			display: none;
+		}
+		/* table.variations {
+			.label {
+				display: none;
+			}
+			.value {
+				a.reset_variations {
+					display: none;
+				}
+			}
+		} */
+	}
+}
+
+#sidebar1 {
+	display: none;
+}
+
+
+body {
+	&.single-product {
+		.footer {
+			margin-bottom: 80px;
+		}
+	}
+}
+
+
+
+
+
+
+
